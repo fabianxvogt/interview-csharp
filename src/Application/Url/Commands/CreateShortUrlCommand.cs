@@ -28,8 +28,6 @@ public class CreateShortUrlCommandHandler : IRequestHandler<CreateShortUrlComman
     private readonly IApplicationDbContext _context;
     private readonly IHashids _hashids;
 
-    //private List<string> hashedUrls = new List<string>();
-
     public CreateShortUrlCommandHandler(IApplicationDbContext context, IHashids hashids)
     {
         _context = context;
@@ -39,7 +37,6 @@ public class CreateShortUrlCommandHandler : IRequestHandler<CreateShortUrlComman
     {
         await Task.CompletedTask;
         var shortUrl = "http://localhost:5246/u/" + encode(request.Url);
-        //hashedUrls.Add(shortUrl);
         return shortUrl;
     }
     public string encode(string url) {
