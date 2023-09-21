@@ -44,4 +44,5 @@ public class CreateShortUrlCommandHandler : IRequestHandler<CreateShortUrlComman
         var hex = Convert.ToHexString(bytes);
         return _hashids.EncodeHex(hex);
     }
+    
 }
